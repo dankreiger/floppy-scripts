@@ -35,7 +35,7 @@
 
 ### TODO for real:
 
-- make a real version of this maybe (with optiions for TS or JS)
+- make a real version of this maybe (with options for TS or JS)
 - write tests first
 - plan folder structure before you write this
 - do it when you feel like you have some time
