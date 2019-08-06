@@ -74,5 +74,7 @@ const run = async () => {
   }
 
   shell.exec('npx sort-package-json');
+  shell.exec('yarn add --dev prettier');
+  shell.exec('prettier --single-quote --write src/* src/**/*');
 };
 run();

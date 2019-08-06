@@ -9,6 +9,13 @@ const setupCodeFormattingHooks = () => {
   shell.exec(
     `npx json --in-place -f package.json -e 'this.husky={"hooks": { "pre-commit": "lint-staged", "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"} }'`
   );
+  shell.exec(
+    `npx json --in-place -f package.json -e 'this.lint-staged={"src/**/*.{js,tsx,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]'`
+  );
+
   shell.exec('yarn add --dev prettier lint-staged husky');
 
   const fileName = 'commitlint.config.js';
