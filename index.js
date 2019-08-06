@@ -89,6 +89,6 @@ const run = async () => {
   shell.exec('npx sort-package-json');
 
   console.log(chalk.white.bgGreen.bold(`Done!`));
-  console.log('🐶🐶🐶🐶🐶');
+  console.log('🐶');
 };
 run();
