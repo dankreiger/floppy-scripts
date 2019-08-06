@@ -14,7 +14,7 @@ const setupCodeFormattingHooks = () => {
 
   shell.exec('yarn add --dev @commitlint/cli @commitlint/config-conventional');
 
-  console.log(chalk.white.bold('Setting up package json hooks'));
+  console.log(chalk.white.cyan.bold('Setting up package json hooks'));
 
   shell.exec(
     `npx json --in-place -f package.json -e 'this.husky={"hooks": { "pre-commit": "lint-staged", "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"} }'`

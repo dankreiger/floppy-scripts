@@ -2,6 +2,7 @@
 
 const shell = require('shelljs');
 const success = require('./../prompts/success');
+const chalk = require('chalk');
 
 const {
   appComponent,
@@ -9,13 +10,20 @@ const {
 } = require('../../stringConstants/appComponent');
 
 const clearCRAScaffold = () => {
+  console.log(chalk.white('Remove CRA boilerblate...\n'));
+
   shell.rm('src/logo.svg');
   shell.rm('src/App.css');
   shell.rm('src/App.js');
   shell.rm('src/App.test.js');
   shell.mkdir('src/App');
-  shell.touch('src/App/App.js');
 
+  console.log(
+    chalk.white('Adding App component files to '),
+    chalk.white.cyan.bold('src/App\n')
+  );
+
+  shell.touch('src/App/App.js');
   shell.touch('src/App/index.js');
 
   shell.ShellString(appComponent).to('src/App/App.js');
