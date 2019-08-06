@@ -1,7 +1,7 @@
 {
   "name": "floppy-scripts",
   "version": "1.0.30",
-  "description": "helper scripts",
+  "description": "messy helper scripts for create-react-app",
   "keywords": [
     "beautify",
     "create-react-app",

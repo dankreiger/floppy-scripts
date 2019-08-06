@@ -36,7 +36,6 @@ const askCI = () => {
         success(CIfilename);
       });
     } else {
-      // CI now, ask questions later because deployment token must be manually added in Travis or CircleCI
       shell.touch(CIfilename);
       shell.ShellString(travisStringNoDeployment()).to(CIfilename);
       success(CIfilename);
