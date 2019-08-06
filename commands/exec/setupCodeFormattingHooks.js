@@ -8,14 +8,13 @@ const success = require('../prompts/success');
 
 const setupCodeFormattingHooks = () => {
   console.log(
-    `${chalk.white.bold('Installing')} ${chalk.white.orange.bold(
-      `@commitlint/cli, @commitlint/config-conventional`
-    )}`
+    chalk.white.bold('Installing'),
+    chalk.white.orange.bold(`@commitlint/cli, @commitlint/config-conventional`)
   );
 
   shell.exec('yarn add --dev @commitlint/cli @commitlint/config-conventional');
 
-  console.log(`${chalk.white.bold('Setting up package json hooks')}`);
+  console.log(chalk.white.bold('Setting up package json hooks'));
 
   shell.exec(
     `npx json --in-place -f package.json -e 'this.husky={"hooks": { "pre-commit": "lint-staged", "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"} }'`
@@ -28,9 +27,8 @@ const setupCodeFormattingHooks = () => {
   );
 
   console.log(
-    `${chalk.white.bold('Installing')} ${chalk.white.orange.bold(
-      `prettier, lint-staged, husky`
-    )}`
+    chalk.white.bold('Installing'),
+    chalk.white.orange.bold(`prettier, lint-staged, husky`)
   );
 
   shell.exec('yarn add --dev prettier lint-staged husky');
