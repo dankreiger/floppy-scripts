@@ -27,14 +27,15 @@
 ### TODO:
 
 - add script to allow user to specify node version 
-- finish redux scripts
 - add script for jest + enzyme
+- add script for react router
+- finish redux scripts
 - finish script for styled-components
 - make it compatible with npm too
 
 ### TODO for real:
 
-- make a real version of this maybe
+- make a real version of this maybe (with optiions for TS or JS)
 - write tests first
 - plan folder structure before you write this
 - do it when you feel like you have some time
