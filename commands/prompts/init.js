@@ -6,7 +6,7 @@ const figlet = require('figlet');
 const init = () => {
   console.log(
     chalk.green(
-      figlet.textSync('Floppy Scripts 🐶', {
+      figlet.textSync('Floppy Scripts', {
         font: 'Small',
         horizontalLayout: 'default',
         verticalLayout: 'default'
@@ -14,6 +14,7 @@ const init = () => {
     )
   );
 
+  console.log('Woof 🐶');
   console.log('\n\n');
 };
 

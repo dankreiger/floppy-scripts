@@ -9,7 +9,7 @@ const success = require('../prompts/success');
 const setupCodeFormattingHooks = () => {
   console.log(
     chalk.white.bold('Installing'),
-    chalk.white.orange.bold(`@commitlint/cli, @commitlint/config-conventional`)
+    chalk.white.cyan.bold(`@commitlint/cli, @commitlint/config-conventional\n`)
   );
 
   shell.exec('yarn add --dev @commitlint/cli @commitlint/config-conventional');
@@ -28,7 +28,7 @@ const setupCodeFormattingHooks = () => {
 
   console.log(
     chalk.white.bold('Installing'),
-    chalk.white.orange.bold(`prettier, lint-staged, husky`)
+    chalk.white.cyan.bold(`prettier, lint-staged, husky\n`)
   );
 
   shell.exec('yarn add --dev prettier lint-staged husky');
