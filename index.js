@@ -2,6 +2,7 @@
 
 // imports
 const shell = require('shelljs');
+const chalk = require('chalk');
 
 // prompts
 const init = require('./commands/prompts/init');
@@ -39,30 +40,33 @@ const run = async () => {
   const { OPTIONS } = answers;
 
   if (OPTIONS.includes(CODE_FORMATTING_HOOKS)) {
+    console.log(chalk.white.cyan.bold(`Setting up code formatting...`));
     setupCodeFormattingHooks();
   }
 
   if (OPTIONS.includes(ABSOLUTE_IMPORTS)) {
+    console.log(chalk.white.cyan.bold(`Setting up absolute imports...`));
     setupAbsoluteImports();
   }
 
   if (OPTIONS.includes(CLEAR_CRA_SCAFFOLD)) {
+    console.log(chalk.white.cyan.bold(`Cleaning CRA...`));
     clearCRAScaffold();
   }
 
   if (OPTIONS.includes(ENZYME)) {
+    console.log(chalk.white.cyan.bold(`Setting up Enzyme...`));
     setupEnzyme();
   }
 
-  if (OPTIONS.includes(REDUX)) {
-    setupRedux();
-  }
-
   if (OPTIONS.includes(PROPTYPES_FOLDER)) {
+    console.log(chalk.white.cyan.bold(`Creating prop types directory...`));
     propTypesFolder();
   }
   // todo
   if (OPTIONS.includes(REDUX)) {
+    console.log(chalk.white.cyan.bold(`Setting up Redux...`));
+
     const reduxAnswers = await reduxQuestions();
     const { REDUX_OPTIONS } = reduxAnswers;
     shell.exec('yarn add redux react-redux redux-thunk');
