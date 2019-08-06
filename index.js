@@ -41,6 +41,7 @@ const run = async () => {
     setupAbsoluteImports();
   }
 
+  // todo
   if (OPTIONS.includes(REDUX)) {
     const reduxAnswers = await reduxQuestions();
     const { REDUX_OPTIONS } = reduxAnswers;
@@ -52,7 +53,6 @@ const run = async () => {
     }
   }
 
-  // show success message
   shell.exec('npx sort-package-json');
 };
 run();
