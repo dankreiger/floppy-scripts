@@ -18,6 +18,12 @@ const setupReducers = () => {
   shell.ShellString(rootReducerString).to(storeFileName);
 };
 
+const setupReducers = () => {
+  shell.mkdir('src/actions');
+  const storeFileName = 'src/actions/index.js';
+  shell.touch(storeFileName);
+};
+
 const setupRedux = () => {
   setupStore();
   setupReducers();
