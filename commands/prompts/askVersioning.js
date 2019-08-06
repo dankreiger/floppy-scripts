@@ -13,6 +13,7 @@ const askVersioning = () => {
     '\n you must install yarn first: ',
     chalk.white.bgCyan.bold('npm install -g yarn')
   );
+  console.log('\n\n\n');
 
   const versioningQuestions = [
     {
