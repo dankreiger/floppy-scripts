@@ -31,3 +31,5 @@ store.subscribe(
 );
 
 export default store;`;
+
+module.exports = reduxStoreWithPersistanceString;

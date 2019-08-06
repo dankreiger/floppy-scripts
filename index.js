@@ -17,8 +17,7 @@ const {
   PROPTYPES_FOLDER,
   ENZYME
 } = require('./commands/prompts/askQuestions').questionsConstants;
-
-const success = require('./commands/prompts/success');
+const askVersioning = require('./commands/prompts/askVersioning');
 
 // exec commands
 
@@ -33,6 +32,7 @@ const run = async () => {
   // show script introduction
   init();
   // ask questions
+  await askVersioning();
   const answers = await askQuestions();
 
   shell.exec('yarn add --dev sort-package-json');
