@@ -34,6 +34,8 @@
 ### TODO:
 
 - add script for react router
+- add script for reselect
+- add changelog generator script
 - make it compatible with npm too
 
 ### Nice to haves, but probably not necessary since VS Code has snippets for these
