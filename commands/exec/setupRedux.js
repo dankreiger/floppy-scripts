@@ -2,6 +2,8 @@
 
 const shell = require('shelljs');
 const reduxStoreString = require('./../../stringConstants/reduxStoreString');
+const reduxStoreWithPersistanceString = require('./../../stringConstants/reduxStoreWithPersistanceString');
+const localStorageString = require('./../../stringConstants/localStorageString');
 const rootReducerString = require('./../../stringConstants/rootReducerString');
 const actionsString = require('./../../stringConstants/actionsString');
 const indexWithReduxString = require('./../../stringConstants/indexWithReduxString');
@@ -14,6 +16,19 @@ const setupStore = () => {
   shell.touch(storeFileName);
   shell.ShellString(reduxStoreString).to(storeFileName);
   success(storeFileName);
+};
+const setupStoreWithPersistance = () => {
+  shell.mkdir('src/store');
+  const storeFileName = 'src/store/store.js';
+  shell.touch(storeFileName);
+  shell.ShellString(reduxStoreWithPersistanceString).to(storeFileName);
+  success(storeFileName);
+
+  shell.mkdir('src/store');
+  const localStorageFileName = 'src/store/localStorage.js';
+  shell.touch(localStorageFileName);
+  shell.ShellString(localStorageString).to(localStorageFileName);
+  success(localStorageFileName);
 };
 
 const setupReducers = () => {
@@ -33,7 +48,7 @@ const setupActions = () => {
   success(actionsFileName);
 };
 
-const setupIndexNoPersistedState = () => {
+const setupIndexWithRedux = () => {
   const indexFileName = 'src/index.js';
   shell.ShellString(indexWithReduxString).to(indexFileName);
   success(indexFileName);
@@ -45,13 +60,18 @@ const setupComponents = () => {
   success(components);
 };
 
-const setupRedux = () => {
+const setupRedux = persistedState => {
   setupAbsoluteImports();
   setupStore();
   setupReducers();
   setupActions();
   setupComponents();
-  setupIndexNoPersistedState();
+  setupIndexWithRedux();
+  if (persistedState) {
+    setupStoreWithPersistance();
+  } else {
+    setupStore();
+  }
 };
 
 module.exports = setupRedux;
