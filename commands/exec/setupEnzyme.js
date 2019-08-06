@@ -9,9 +9,10 @@ const setupEnzyme = () => {
   const fileName = 'setupTests.js';
 
   shell.exec('yarn add --dev enzyme enzyme-adapter-react-16');
-
   shell.touch(`${baseDir}/${fileName}`);
-  shell.ShellString(setupTestsSimple).to(fileName);
+
+  const file = `${baseDir}/${fileName}`;
+  shell.ShellString(setupTestsSimple).to(file);
   success(fileName);
 };
 
