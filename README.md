@@ -2,7 +2,7 @@
 
 ### Usage
 
-- add to a create-react-app project when using `yarn`
+- add to a create-react-app project when using `yarn` to cut down on common repetitive tasks
 
 - Don't use this unless you are me since this is super messy
 - So Dan - since you're the only one using this... for now, do everything from the root of the project
