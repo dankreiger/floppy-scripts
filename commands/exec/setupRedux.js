@@ -36,6 +36,13 @@ const setupActions = () => {
 const setupIndexNoPersistedState = () => {
   const indexFileName = 'src/index.js';
   shell.ShellString(indexWithReduxString).to(indexFileName);
+  success(indexFileName);
+};
+
+const setupComponents = () => {
+  const components = 'src/components';
+  shell.mkdir(components);
+  success(components);
 };
 
 const setupRedux = () => {
@@ -43,6 +50,7 @@ const setupRedux = () => {
   setupStore();
   setupReducers();
   setupActions();
+  setupComponents();
   setupIndexNoPersistedState();
 };
 
