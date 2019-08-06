@@ -1,14 +1,20 @@
 ## A quick and sloppy cli for saving time
 
+### Prerequisites
+
+- node
+- npx
+- yarn
+
 ### Usage
 
 - add to a create-react-app project when using `yarn` to cut down on common repetitive tasks
 
 - Don't use this unless you are me since this is super messy
 - So Dan - since you're the only one using this... for now, do everything from the root of the project
-- it's a mess, it's just for me - so you can check it out if you're curious about sloppy code written in 30 minutes 
+- it's a mess, it's just for me - so you can check it out if you're curious about sloppy code written in 30 minutes
 
-***
+---
 
 ### Install with yarn:
 
@@ -22,11 +28,11 @@
   $ yarn run floppy
 ```
 
-***
+---
 
 ### TODO:
 
-- add script to allow user to specify node version 
+- add script to allow user to specify node version
 - add script for jest + enzyme
 - add script for react router
 - add script for Travis CI/Circle CI
@@ -34,8 +40,8 @@
 - finish script for styled-components
 - make it compatible with npm too
 
-
 ### Nice to haves, but probably not necessary since VS Code has snippets for these
+
 - action generators
 - action test generators
 - reducer generators

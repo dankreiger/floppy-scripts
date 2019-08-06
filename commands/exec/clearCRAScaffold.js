@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 const shell = require('shelljs');
+const success = require('./../prompts/success');
+
 const {
   appComponent,
   appIndex
@@ -13,9 +15,14 @@ const clearCRAScaffold = () => {
   shell.rm('src/App.test.js');
   shell.mkdir('src/App');
   shell.touch('src/App/App.js');
+
   shell.touch('src/App/index.js');
+
   shell.ShellString(appComponent).to('src/App/App.js');
   shell.ShellString(appIndex).to('src/App/index.js');
+
+  success('src/App/App.js');
+  success('src/App/index.js');
 };
 
 module.exports = clearCRAScaffold;
