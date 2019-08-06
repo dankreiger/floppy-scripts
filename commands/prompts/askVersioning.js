@@ -1,13 +1,19 @@
 #!/usr/bin/env node
 
 const shell = require('shelljs');
-const success = require('./success');
 const inquirer = require('inquirer');
+const chalk = require('chalk');
+const success = require('./success');
 
 const askVersioning = () => {
   const currentNodeVersion = shell.exec('node -v | cut -c 2-').stdout.trim();
   const currentYarnVersion = shell.exec('yarn -v').stdout.trim();
   console.log('\n no yarn, no puppy this time\n\n');
+  console.log(
+    '\n you must install yarn first: ',
+    chalk.white.bgGreen.bold('npm install -g yarn')
+  );
+
   const versioningQuestions = [
     {
       type: 'input',
