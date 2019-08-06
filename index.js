@@ -12,7 +12,8 @@ const {
 const {
   CODE_FORMATTING_HOOKS,
   ABSOLUTE_IMPORTS,
-  REDUX
+  REDUX,
+  CLEAR_CRA_SCAFFOLD
 } = require('./commands/prompts/askQuestions').questionsConstants;
 
 const success = require('./commands/prompts/success');

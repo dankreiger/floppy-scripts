@@ -21,7 +21,8 @@
   "author": "Dan Kreiger <dan@dankreiger.com> (http://www.dankreiger.com/)",
   "main": "index.js",
   "bin": {
-    "floppy": "./index.js"
+    "floppy": "./index.js",
+    "floppy-scripts": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
