@@ -23,7 +23,7 @@ const setupCodeFormattingHooks = () => {
     `npx json --in-place -f package.json -e 'this.lint-staged={"src/**/*.{js,tsx,jsx,json,css}": [
       "prettier --single-quote --write",
       "git add"
-    ]'`
+    ]}'`
   );
 
   console.log(
