@@ -20,7 +20,7 @@ const clearCRAScaffold = () => {
 
   console.log(
     chalk.white('Adding App component files to '),
-    chalk.white.cyan.bold('src/App\n')
+    chalk.cyan.bold('src/App\n')
   );
 
   shell.touch('src/App/App.js');

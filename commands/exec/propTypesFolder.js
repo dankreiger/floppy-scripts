@@ -5,7 +5,7 @@ const success = require('../prompts/success');
 const chalk = require('chalk');
 
 const propTypesFolder = () => {
-  console.log(chalk.white('Creating'), chalk.white.cyan.bold('src/types\n'));
+  console.log(chalk.white('Creating'), chalk.cyan.bold('src/types\n'));
   const folder = 'src/types';
   shell.mkdir('src/types');
   success(folder);

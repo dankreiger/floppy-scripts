@@ -11,7 +11,7 @@ const setupEnzyme = () => {
 
   console.log(
     chalk.white('Installing'),
-    chalk.white.cyan.bold('enzyme enzyme-adapter-react-16\n')
+    chalk.cyan.bold('enzyme enzyme-adapter-react-16\n')
   );
 
   shell.exec('yarn add --dev enzyme enzyme-adapter-react-16');

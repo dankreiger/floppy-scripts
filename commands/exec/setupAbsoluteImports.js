@@ -9,7 +9,7 @@ const setupAbsoluteImports = () => {
   const fileName = 'jsconfig.json';
   console.log(
     chalk.white('Configuring '),
-    chalk.white.cyan.bold(`${fileName}\n`)
+    chalk.cyan.bold(`${fileName}\n`)
   );
   shell.touch(fileName);
   shell.ShellString(jsConfigString).to(fileName);

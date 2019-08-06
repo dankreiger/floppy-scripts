@@ -8,7 +8,7 @@ const success = require('./../prompts/success');
 const setupStyledComponents = () => {
   console.log(
     chalk.white('Installing'),
-    chalk.white.cyan.bold('styled-components\n')
+    chalk.cyan.bold('styled-components\n')
   );
   shell.exec('yarn add styled-components');
   shell.mkdir('src/App');

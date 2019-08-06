@@ -19,7 +19,7 @@ const setupStore = () => {
 
   console.log(
     chalk.white('Creating '),
-    chalk.white.cyan.bold(`${storeFileName}\n`)
+    chalk.cyan.bold(`${storeFileName}\n`)
   );
   shell.touch(storeFileName);
   shell.ShellString(reduxStoreString).to(storeFileName);
@@ -31,7 +31,7 @@ const setupStoreWithPersistance = () => {
   const storeFileName = 'src/store/store.js';
   console.log(
     chalk.white('Creating '),
-    chalk.white.cyan.bold(`${storeFileName}\n`)
+    chalk.cyan.bold(`${storeFileName}\n`)
   );
   shell.touch(storeFileName);
   shell.ShellString(reduxStoreWithPersistanceString).to(storeFileName);
@@ -41,7 +41,7 @@ const setupStoreWithPersistance = () => {
   const localStorageFileName = 'src/store/localStorage.js';
   console.log(
     chalk.white('Creating '),
-    chalk.white.cyan.bold(`${localStorageFileName}\n`)
+    chalk.cyan.bold(`${localStorageFileName}\n`)
   );
   shell.touch(localStorageFileName);
   shell.ShellString(localStorageString).to(localStorageFileName);
@@ -53,7 +53,7 @@ const setupReducers = () => {
   const reducersFileName = 'src/reducers/index.js';
   console.log(
     chalk.white('Creating '),
-    chalk.white.cyan.bold(`${reducersFileName}\n`)
+    chalk.cyan.bold(`${reducersFileName}\n`)
   );
   shell.touch(reducersFileName);
   shell.ShellString(rootReducerString).to(reducersFileName);
@@ -65,7 +65,7 @@ const setupActions = () => {
   const actionsFileName = 'src/actions/index.js';
   console.log(
     chalk.white('Creating '),
-    chalk.white.cyan.bold(`${actionsFileName}\n`)
+    chalk.cyan.bold(`${actionsFileName}\n`)
   );
   shell.ShellString(actionsString).to(actionsFileName);
   shell.touch(actionsFileName);
@@ -78,7 +78,7 @@ const setupConstants = () => {
   const constantsFileName = 'src/constants/index.js';
   console.log(
     chalk.white('Creating '),
-    chalk.white.cyan.bold(`${constantsFileName}\n`)
+    chalk.cyan.bold(`${constantsFileName}\n`)
   );
   shell.ShellString(constantsString).to(constantsFileName);
   shell.touch(constantsFileName);
@@ -90,7 +90,7 @@ const setupIndexWithRedux = () => {
   const indexFileName = 'src/index.js';
   console.log(
     chalk.white('Creating '),
-    chalk.white.cyan.bold(`${indexFileName}\n`)
+    chalk.cyan.bold(`${indexFileName}\n`)
   );
   shell.ShellString(indexWithReduxString).to(indexFileName);
   success(indexFileName);
@@ -100,7 +100,7 @@ const setupComponents = () => {
   const components = 'src/components';
   console.log(
     chalk.white('Creating '),
-    chalk.white.cyan.bold(`${components}\n`)
+    chalk.cyan.bold(`${components}\n`)
   );
   shell.mkdir(components);
   success(components);
@@ -117,7 +117,7 @@ const setupRedux = persistedState => {
   if (persistedState) {
     console.log(
       chalk.white('Installing '),
-      chalk.white.cyan.bold(`lodash.throttle\n`)
+      chalk.cyan.bold(`lodash.throttle\n`)
     );
     shell.exec('yarn add lodash.throttle');
     setupStoreWithPersistance();
