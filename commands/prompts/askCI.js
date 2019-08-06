@@ -31,8 +31,12 @@ const askCI = () => {
       ];
 
       await inquirer.prompt(deploymentUrl).then(({ url }) => {
+        const u = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
+        shell.exec(
+          `npx json --in-place -f package.json -e 'this.homepage=https://${u}'`
+        );
         shell.touch(CIfilename);
-        shell.ShellString(travisStringWithDeployment(url)).to(CIfilename);
+        shell.ShellString(travisStringWithDeployment(u)).to(CIfilename);
         success(CIfilename);
       });
     } else {
