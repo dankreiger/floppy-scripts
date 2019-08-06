@@ -13,6 +13,8 @@ const init = () => {
       })
     )
   );
+
+  console.log('\n\n');
 };
 
 module.exports = init;

@@ -40,32 +40,34 @@ const run = async () => {
   const { OPTIONS } = answers;
 
   if (OPTIONS.includes(CODE_FORMATTING_HOOKS)) {
-    console.log(chalk.white.cyan.bold(`Setting up code formatting...`));
+    console.log(chalk.white.cyan.bold(`\n\nSetting up code formatting...\n`));
     setupCodeFormattingHooks();
   }
 
   if (OPTIONS.includes(ABSOLUTE_IMPORTS)) {
-    console.log(chalk.white.cyan.bold(`Setting up absolute imports...`));
+    console.log(chalk.white.cyan.bold(`\n\nSetting up absolute imports...\n`));
     setupAbsoluteImports();
   }
 
   if (OPTIONS.includes(CLEAR_CRA_SCAFFOLD)) {
-    console.log(chalk.white.cyan.bold(`Cleaning CRA...`));
+    console.log(chalk.white.cyan.bold(`\n\nCleaning CRA...\n`));
     clearCRAScaffold();
   }
 
   if (OPTIONS.includes(ENZYME)) {
-    console.log(chalk.white.cyan.bold(`Setting up Enzyme...`));
+    console.log(chalk.white.cyan.bold(`\n\nSetting up Enzyme...\n`));
     setupEnzyme();
   }
 
   if (OPTIONS.includes(PROPTYPES_FOLDER)) {
-    console.log(chalk.white.cyan.bold(`Creating prop types directory...`));
+    console.log(
+      chalk.white.cyan.bold(`\n\nCreating prop types directory...\n`)
+    );
     propTypesFolder();
   }
   // todo
   if (OPTIONS.includes(REDUX)) {
-    console.log(chalk.white.cyan.bold(`Setting up Redux...`));
+    console.log(chalk.white.cyan.bold(`\n\nSetting up Redux...\n`));
 
     const reduxAnswers = await reduxQuestions();
     const { REDUX_OPTIONS } = reduxAnswers;
