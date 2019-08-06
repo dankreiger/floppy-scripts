@@ -23,6 +23,7 @@ const success = require('./commands/prompts/success');
 
 const setupCodeFormattingHooks = require('./commands/exec/setupCodeFormattingHooks');
 const setupAbsoluteImports = require('./commands/exec/setupAbsoluteImports');
+const setupEnzyme = require('./commands/exec/setupEnzyme');
 const clearCRAScaffold = require('./commands/exec/clearCRAScaffold');
 
 const run = async () => {
@@ -46,7 +47,7 @@ const run = async () => {
     clearCRAScaffold();
   }
 
-  if(OPTIONS.includes(ENZYME)) {
+  if (OPTIONS.includes(ENZYME)) {
     setupEnzyme();
   }
 
