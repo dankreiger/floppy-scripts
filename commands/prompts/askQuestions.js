@@ -8,6 +8,7 @@ const questionsConstants = {
   CODE_FORMATTING_HOOKS: 'CODE_FORMATTING_HOOKS',
   COMMITLINT: 'COMMITLINT',
   ENZYME: 'ENZYME',
+  PROPTYPES_FOLDER: 'PROPTYPES_FOLDER',
   STYLED_COMPONENTS: 'STYLED_COMPONENTS',
   REDUX: 'REDUX'
 };
@@ -23,6 +24,7 @@ const askQuestions = () => {
         questionsConstants.CLEAR_CRA_SCAFFOLD,
         questionsConstants.CODE_FORMATTING_HOOKS,
         questionsConstants.ENZYME,
+        questionsConstants.PROPTYPES_FOLDER,
         questionsConstants.STYLED_COMPONENTS,
         questionsConstants.REDUX
       ]

@@ -4,6 +4,7 @@ const shell = require('shelljs');
 const reduxStoreString = require('./../../stringConstants/reduxStoreString');
 const rootReducerString = require('./../../stringConstants/rootReducerString');
 const actionsString = require('./../../stringConstants/actionsString');
+const indexWithReduxString = require('./../../stringConstants/indexWithReduxString');
 const success = require('./../prompts/success');
 const setupAbsoluteImports = require('./setupAbsoluteImports');
 
@@ -32,11 +33,17 @@ const setupActions = () => {
   success(actionsFileName);
 };
 
+const setupIndexNoPersistedState = () => {
+  const indexFileName = 'src/index.js';
+  shell.ShellString(indexWithReduxString).to(indexFileName);
+};
+
 const setupRedux = () => {
   setupAbsoluteImports();
   setupStore();
   setupReducers();
   setupActions();
+  setupIndexNoPersistedState();
 };
 
 module.exports = setupRedux;

@@ -14,6 +14,7 @@ const {
   ABSOLUTE_IMPORTS,
   REDUX,
   CLEAR_CRA_SCAFFOLD,
+  PROPTYPES_FOLDER,
   ENZYME
 } = require('./commands/prompts/askQuestions').questionsConstants;
 
@@ -26,6 +27,7 @@ const setupAbsoluteImports = require('./commands/exec/setupAbsoluteImports');
 const setupEnzyme = require('./commands/exec/setupEnzyme');
 const setupRedux = require('./commands/exec/setupRedux');
 const clearCRAScaffold = require('./commands/exec/clearCRAScaffold');
+const propTypesFolder = require('./commands/exec/propTypesFolder');
 
 const run = async () => {
   // show script introduction
@@ -56,6 +58,9 @@ const run = async () => {
     setupRedux();
   }
 
+  if (OPTIONS.includes(PROPTYPES_FOLDER)) {
+    propTypesFolder();
+  }
   // todo
   if (OPTIONS.includes(REDUX)) {
     const reduxAnswers = await reduxQuestions();
