@@ -5,6 +5,7 @@
 - node
 - npx
 - yarn
+- nvm
 
 ### Usage
 
@@ -32,12 +33,7 @@
 
 ### TODO:
 
-- add script to allow user to specify node version
-- add script for jest + enzyme
 - add script for react router
-- add script for Travis CI/Circle CI
-- finish redux scripts
-- finish script for styled-components
 - make it compatible with npm too
 
 ### Nice to haves, but probably not necessary since VS Code has snippets for these
