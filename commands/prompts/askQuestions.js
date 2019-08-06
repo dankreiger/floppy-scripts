@@ -4,6 +4,7 @@ const inquirer = require('inquirer');
 
 const questionsConstants = {
   ABSOLUTE_IMPORTS: 'ABSOLUTE_IMPORTS',
+  CLEAR_CRA_SCAFFOLD: 'CLEAR_CRA_SCAFFOLD',
   CODE_FORMATTING_HOOKS: 'CODE_FORMATTING_HOOKS',
   COMMITLINT: 'COMMITLINT',
   STYLED_COMPONENTS: 'STYLED_COMPONENTS',
@@ -20,6 +21,7 @@ const askQuestions = () => {
         questionsConstants.CODE_FORMATTING_HOOKS,
         questionsConstants.ABSOLUTE_IMPORTS,
         questionsConstants.STYLED_COMPONENTS,
+        questionsConstants.CLEAR_CRA_SCAFFOLD,
         questionsConstants.REDUX
       ]
     }

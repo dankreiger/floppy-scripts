@@ -21,6 +21,7 @@ const success = require('./commands/prompts/success');
 
 const setupCodeFormattingHooks = require('./commands/exec/setupCodeFormattingHooks');
 const setupAbsoluteImports = require('./commands/exec/setupAbsoluteImports');
+const clearCRAScaffold = require('./commands/exec/clearCRAScaffold');
 
 const run = async () => {
   // show script introduction
@@ -29,7 +30,6 @@ const run = async () => {
   const answers = await askQuestions();
 
   shell.exec('yarn add --dev sort-package-json');
-
   const { OPTIONS } = answers;
   let filename;
 
@@ -39,6 +39,10 @@ const run = async () => {
 
   if (OPTIONS.includes(ABSOLUTE_IMPORTS)) {
     setupAbsoluteImports();
+  }
+
+  if (OPTIONS.includes(CLEAR_CRA_SCAFFOLD)) {
+    clearCRAScaffold();
   }
 
   // todo

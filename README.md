@@ -4,10 +4,18 @@
 
 - add to a create-react-app project when using `yarn`
 
-Run the cli:
+- Don't use this unless you are me since this is super messy - for now, do everything from the root of the project
+
+Install with yarn:
+
+```sh
+  $ yarn add floppy-scripts
+```
+
+Run the cli :
 
 ```
-  $ npm run floppy
+  $ yarn run floppy-scripts
 ```
 
 ### TODO:
