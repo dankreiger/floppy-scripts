@@ -5,7 +5,7 @@ const commitlintString = require('../../stringConstants/commitlint');
 const success = require('../prompts/success');
 
 const setupCodeFormattingHooks = () => {
-  fileName = 'commitlint.config.js';
+  const fileName = 'commitlint.config.js';
   shell.touch(fileName);
   shell.ShellString(commitlintString).to(fileName);
   success(fileName);
