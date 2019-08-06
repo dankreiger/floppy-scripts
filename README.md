@@ -28,6 +28,7 @@
 
 - add script to allow user to specify node version 
 - finish redux scripts
+- add script for jest + enzyme
 - finish script for styled-components
 - make it compatible with npm too
 
