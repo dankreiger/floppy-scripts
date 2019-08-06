@@ -72,6 +72,19 @@ const setupActions = () => {
   success(actionsFileName);
 };
 
+const setupConstants = () => {
+  shell.mkdir('src/constants');
+  const constantsFileName = 'src/constants/index.js';
+  console.log(
+    chalk.white('Creating '),
+    chalk.white.cyan.bold(`${constantsFileName}\n`)
+  );
+  shell.ShellString(actionsString).to(constantsFileName);
+  shell.touch(constantsFileName);
+
+  success(constantsFileName);
+};
+
 const setupIndexWithRedux = () => {
   const indexFileName = 'src/index.js';
   console.log(
@@ -97,6 +110,7 @@ const setupRedux = persistedState => {
   setupStore();
   setupReducers();
   setupActions();
+  setupConstants();
   setupComponents();
   setupIndexWithRedux();
   if (persistedState) {
