@@ -1,4 +1,6 @@
-## A quick and sloppy cli for saving time
+## A quick and sloppy cli for saving time :dog:
+
+- unfortunately it is not yet floppy, but rather sloppy
 
 ### Prerequisites
 
