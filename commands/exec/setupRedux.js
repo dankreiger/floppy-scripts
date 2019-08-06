@@ -5,6 +5,7 @@ const reduxStoreString = require('./../../stringConstants/reduxStoreString');
 const rootReducerString = require('./../../stringConstants/rootReducerString');
 const actionsString = require('./../../stringConstants/actionsString');
 const success = require('./../prompts/success');
+const setupAbsoluteImports = require('./setupAbsoluteImports');
 
 const setupStore = () => {
   shell.mkdir('src/store');
@@ -32,6 +33,7 @@ const setupActions = () => {
 };
 
 const setupRedux = () => {
+  setupAbsoluteImports();
   setupStore();
   setupReducers();
   setupActions();
