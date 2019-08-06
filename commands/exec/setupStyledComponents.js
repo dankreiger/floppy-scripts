@@ -2,14 +2,16 @@
 
 const shell = require('shelljs');
 const appStyles = require('./../../stringConstants/appStyles');
+const success = require('./../prompts/success');
 
 const setupStyledComponents = () => {
   shell.exec('yarn add styled-components');
   shell.mkdir('src/App');
-  shell.touch('src/App/App.styles.js');
-  shell.ShellString(appComponent).to('src/App/App.styles.js');
-  shell.touch(storeFileName);
+
+  const filename = 'src/App/App.styles.js';
+  shell.touch(filename);
   shell.ShellString(appStyles).to(storeFileName);
+  success(fileName);
 };
 
 module.exports = setupStyledComponents;

@@ -3,25 +3,32 @@
 const shell = require('shelljs');
 const reduxStoreString = require('./../../stringConstants/reduxStoreString');
 const rootReducerString = require('./../../stringConstants/rootReducerString');
+const actionsString = require('./../../stringConstants/actionsString');
+const success = require('./../prompts/success');
 
 const setupStore = () => {
   shell.mkdir('src/store');
   const storeFileName = 'src/store/store.js';
   shell.touch(storeFileName);
   shell.ShellString(reduxStoreString).to(storeFileName);
+  success(storeFileName);
 };
 
 const setupReducers = () => {
   shell.mkdir('src/reducers');
-  const storeFileName = 'src/reducers/index.js';
-  shell.touch(storeFileName);
-  shell.ShellString(rootReducerString).to(storeFileName);
+  const reducersFileName = 'src/reducers/index.js';
+  shell.touch(reducersFileName);
+  shell.ShellString(rootReducerString).to(reducersFileName);
+  success(reducersFileName);
 };
 
 const setupActions = () => {
   shell.mkdir('src/actions');
-  const storeFileName = 'src/actions/index.js';
-  shell.touch(storeFileName);
+  const actionsFileName = 'src/actions/index.js';
+  shell.ShellString(actionsString).to(actionsFileName);
+  shell.touch(actionsFileName);
+
+  success(actionsFileName);
 };
 
 const setupRedux = () => {
