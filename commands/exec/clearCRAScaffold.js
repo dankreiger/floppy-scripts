@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const shell = require('shelljs');
-const appComponentString = require('./../../stringConstants/appComponentString');
+const appComponent = require('../../stringConstants/appComponent');
 
 const clearCRAScaffold = () => {
   shell.rm('src/logo.svg');
@@ -9,7 +9,7 @@ const clearCRAScaffold = () => {
   shell.rm('src/App.js');
   shell.rm('src/App.test.js');
   shell.touch('src/App.js');
-  shell.ShellString(appComponentString).to('src/App.js');
+  shell.ShellString(appComponent).to('src/App.js');
 };
 
 module.exports = clearCRAScaffold;

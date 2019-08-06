@@ -1,4 +1,4 @@
-const appComponentString = `import React from 'react';
+const appComponent = `import React from 'react';
 function App() {
   return (
     <div className="App">
@@ -8,4 +8,4 @@ function App() {
 }
 export default App;`;
 
-module.exports = appComponentString;
+module.exports = appComponent;
