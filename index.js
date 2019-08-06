@@ -13,7 +13,8 @@ const {
   CODE_FORMATTING_HOOKS,
   ABSOLUTE_IMPORTS,
   REDUX,
-  CLEAR_CRA_SCAFFOLD
+  CLEAR_CRA_SCAFFOLD,
+  ENZYME
 } = require('./commands/prompts/askQuestions').questionsConstants;
 
 const success = require('./commands/prompts/success');
@@ -32,7 +33,6 @@ const run = async () => {
 
   shell.exec('yarn add --dev sort-package-json');
   const { OPTIONS } = answers;
-  let filename;
 
   if (OPTIONS.includes(CODE_FORMATTING_HOOKS)) {
     setupCodeFormattingHooks();
@@ -44,6 +44,10 @@ const run = async () => {
 
   if (OPTIONS.includes(CLEAR_CRA_SCAFFOLD)) {
     clearCRAScaffold();
+  }
+
+  if(OPTIONS.includes(ENZYME)) {
+    setupEnzyme();
   }
 
   // todo

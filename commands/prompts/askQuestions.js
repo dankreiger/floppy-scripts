@@ -7,6 +7,7 @@ const questionsConstants = {
   CLEAR_CRA_SCAFFOLD: 'CLEAR_CRA_SCAFFOLD',
   CODE_FORMATTING_HOOKS: 'CODE_FORMATTING_HOOKS',
   COMMITLINT: 'COMMITLINT',
+  ENZYME: 'ENZYME',
   STYLED_COMPONENTS: 'STYLED_COMPONENTS',
   REDUX: 'REDUX'
 };
@@ -18,10 +19,11 @@ const askQuestions = () => {
       name: 'OPTIONS',
       message: 'What do you need?',
       choices: [
-        questionsConstants.CODE_FORMATTING_HOOKS,
         questionsConstants.ABSOLUTE_IMPORTS,
-        questionsConstants.STYLED_COMPONENTS,
         questionsConstants.CLEAR_CRA_SCAFFOLD,
+        questionsConstants.CODE_FORMATTING_HOOKS,
+        questionsConstants.ENZYME,
+        questionsConstants.STYLED_COMPONENTS,
         questionsConstants.REDUX
       ]
     }
