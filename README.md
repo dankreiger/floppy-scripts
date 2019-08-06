@@ -1,5 +1,7 @@
 ## A quick and sloppy cli for saving time :dog:
 
+![npm](https://img.shields.io/npm/v/floppy-scripts) ![David](https://img.shields.io/david/dankreiger/floppy-scripts)
+
 - unfortunately it is not yet floppy, but rather sloppy
 
 ### Prerequisites
