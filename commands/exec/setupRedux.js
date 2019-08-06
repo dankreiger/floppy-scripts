@@ -68,6 +68,7 @@ const setupRedux = persistedState => {
   setupComponents();
   setupIndexWithRedux();
   if (persistedState) {
+    shell.exec('yarn add lodash.throttle');
     setupStoreWithPersistance();
   } else {
     setupStore();

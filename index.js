@@ -68,8 +68,9 @@ const run = async () => {
     shell.exec('yarn add redux react-redux redux-thunk');
 
     if (REDUX_OPTIONS === 'Yes') {
-      shell.exec('yarn add lodash.throttle');
+      setupRedux(true);
     } else {
+      setupRedux();
     }
   }
 
