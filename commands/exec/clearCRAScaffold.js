@@ -10,7 +10,7 @@ const {
 } = require('../../stringConstants/appComponent');
 
 const clearCRAScaffold = () => {
-  console.log(chalk.white('Remove CRA boilerblate...\n'));
+  console.log(chalk.white('Remove CRA boilerplate...\n'));
 
   shell.rm('src/logo.svg');
   shell.rm('src/App.css');

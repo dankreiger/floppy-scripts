@@ -19,6 +19,7 @@ const {
   ENZYME
 } = require('./commands/prompts/askQuestions').questionsConstants;
 const askVersioning = require('./commands/prompts/askVersioning');
+const askCI = require('./commands/prompts/askCI');
 
 // exec commands
 
@@ -32,8 +33,11 @@ const propTypesFolder = require('./commands/exec/propTypesFolder');
 const run = async () => {
   // show script introduction
   init();
-  // ask questions
+  // preliminary versioning
   await askVersioning();
+  // CI setup
+  await askCI();
+  // ask questions
   const answers = await askQuestions();
 
   shell.exec('yarn add --dev sort-package-json');

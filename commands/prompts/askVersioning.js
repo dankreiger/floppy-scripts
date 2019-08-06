@@ -2,13 +2,12 @@
 
 const shell = require('shelljs');
 const success = require('./success');
-const chalk = require('chalk');
 const inquirer = require('inquirer');
 
 const askVersioning = () => {
   const currentNodeVersion = shell.exec('node -v | cut -c 2-').stdout.trim();
   const currentYarnVersion = shell.exec('yarn -v').stdout.trim();
-  console.log('\n\n');
+  console.log('\n no yarn, no puppy this time\n\n');
   const versioningQuestions = [
     {
       type: 'input',

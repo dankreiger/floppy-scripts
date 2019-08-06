@@ -8,6 +8,7 @@ const reduxStoreWithPersistanceString = require('./../../stringConstants/reduxSt
 const localStorageString = require('./../../stringConstants/localStorageString');
 const rootReducerString = require('./../../stringConstants/rootReducerString');
 const actionsString = require('./../../stringConstants/actionsString');
+const constantsString = require('./../../stringConstants/constantsString');
 const indexWithReduxString = require('./../../stringConstants/indexWithReduxString');
 const success = require('./../prompts/success');
 const setupAbsoluteImports = require('./setupAbsoluteImports');
@@ -79,7 +80,7 @@ const setupConstants = () => {
     chalk.white('Creating '),
     chalk.white.cyan.bold(`${constantsFileName}\n`)
   );
-  shell.ShellString(actionsString).to(constantsFileName);
+  shell.ShellString(constantsString).to(constantsFileName);
   shell.touch(constantsFileName);
 
   success(constantsFileName);
