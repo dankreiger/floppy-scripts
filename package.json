@@ -1,0 +1,35 @@
+{
+  "name": "floppy-scripts",
+  "version": "1.0.0",
+  "description": "helper scripts",
+  "keywords": [
+    "beautify",
+    "create-react-app",
+    "lint",
+    "react",
+    "redux"
+  ],
+  "homepage": "https://github.com/dankreiger/floppy-scripts#readme",
+  "bugs": {
+    "url": "https://github.com/dankreiger/floppy-scripts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dankreiger/floppy-scripts.git"
+  },
+  "license": "MIT",
+  "author": "Dan Kreiger <dan@dankreiger.com> (http://www.dankreiger.com/)",
+  "main": "index.js",
+  "bin": {
+    "floppy": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "2.4.2",
+    "figlet": "1.2.3",
+    "inquirer": "6.5.0",
+    "shelljs": "0.8.3"
+  }
+}
