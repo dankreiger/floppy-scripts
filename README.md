@@ -34,6 +34,14 @@
 - finish script for styled-components
 - make it compatible with npm too
 
+
+### Nice to haves, but probably not necessary since VS Code has snippets for these
+- action generators
+- action test generators
+- reducer generators
+- reducer test generators
+- component test generators
+
 ### TODO for real:
 
 - make a real version of this maybe (with options for TS or JS)
