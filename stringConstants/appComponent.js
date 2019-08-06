@@ -8,4 +8,9 @@ function App() {
 }
 export default App;`;
 
-module.exports = appComponent;
+const appIndex = `
+import App from './App';
+
+export default App;`;
+
+module.exports = { appComponent, appIndex };
