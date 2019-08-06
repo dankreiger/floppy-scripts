@@ -24,7 +24,7 @@ const success = require('./commands/prompts/success');
 const setupCodeFormattingHooks = require('./commands/exec/setupCodeFormattingHooks');
 const setupAbsoluteImports = require('./commands/exec/setupAbsoluteImports');
 const setupEnzyme = require('./commands/exec/setupEnzyme');
-const setupEnzyme = require('./commands/exec/setupRedux');
+const setupRedux = require('./commands/exec/setupRedux');
 const clearCRAScaffold = require('./commands/exec/clearCRAScaffold');
 
 const run = async () => {
