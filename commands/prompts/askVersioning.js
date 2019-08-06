@@ -11,7 +11,7 @@ const askVersioning = () => {
   console.log('\n no yarn, no puppy this time\n\n');
   console.log(
     '\n you must install yarn first: ',
-    chalk.white.bgGreen.bold('npm install -g yarn')
+    chalk.white.bgCyan.bold('npm install -g yarn')
   );
 
   const versioningQuestions = [
