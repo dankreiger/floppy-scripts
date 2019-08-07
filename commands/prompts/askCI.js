@@ -32,7 +32,7 @@ const askCI = () => {
 
       await inquirer.prompt(deploymentUrl).then(({ url }) => {
         let u;
-        if (!url) {
+        if (!url && !url.length) {
           u = 'your-app-name.surge.sh';
         }
         u = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
