@@ -34,6 +34,7 @@ const scaffoldReduxState = require('./commands/exec/scaffoldReduxState');
 const clearCRAScaffold = require('./commands/exec/clearCRAScaffold');
 const propTypesFolder = require('./commands/exec/propTypesFolder');
 const setupReactRouter = require('./commands/exec/setupReactRouter');
+const setupStyledComponents = require('./commands/exec/setupStyledComponents');
 const makeCodeNice = require('./commands/exec/makeCodeNice');
 
 const prepareRedux = async () => {
@@ -94,6 +95,11 @@ const run = async () => {
   if (OPTIONS.includes(ENZYME)) {
     console.log(chalk.cyan.bold(`\n\nSetting up Enzyme...\n`));
     setupEnzyme();
+  }
+
+  if (OPTIONS.includes(STYLED_COMPONENTS)) {
+    console.log(chalk.cyan.bold(`\n\nSetting up Styled Components...\n`));
+    setupStyledComponents();
   }
 
   if (OPTIONS.includes(PROPTYPES_FOLDER)) {
