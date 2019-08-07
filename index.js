@@ -83,7 +83,19 @@ const run = async () => {
   }
 
   console.log(chalk.cyan.bold(`\n\nFormatting code...\n`));
-  shell.exec('yarn add --dev prettier');
+  shell.exec(`   
+    declare file="package.json"
+    declare regex="\s+prettier\s+"
+
+    declare file_content=$( cat "$file" )
+    if [[ " $file_content " =~ $regex ]] # please note the space before and after the file content
+        then
+            echo ""
+        else
+        yarn add --dev prettier
+      fi
+    exit
+  `)
   shell.exec('prettier --single-quote --write src/* src/**/*');
   console.log(chalk.cyan.bold(`\n\nSorting package.json...\n`));
   shell.exec('npx sort-package-json');
