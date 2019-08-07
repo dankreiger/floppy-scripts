@@ -9,7 +9,6 @@ const setupIndexWithReactRouter = () => {
   shell.exec('yarn add react-router-dom');
 
   const indexFileName = 'src/index.js';
-  shell.exec();
 
   console.log(chalk.white('Creating '), chalk.cyan.bold(`${indexFileName}\n`));
   shell.ShellString(indexWithReactRouterString).to(indexFileName);
