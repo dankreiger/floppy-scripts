@@ -32,7 +32,7 @@ const clearCRAScaffold = require('./commands/exec/clearCRAScaffold');
 const propTypesFolder = require('./commands/exec/propTypesFolder');
 const setupReactRouter = require('./commands/exec/setupReactRouter');
 
-const prepareRedux = () => {
+const prepareRedux = async () => {
   console.log(chalk.cyan.bold(`\n\nSetting up Redux...\n`));
 
   const reduxAnswers = await reduxQuestions();
@@ -44,7 +44,7 @@ const prepareRedux = () => {
   } else {
     setupRedux();
   }
-}
+};
 
 const run = async () => {
   // show script introduction
@@ -94,10 +94,10 @@ const run = async () => {
         `\n\nSetting up React Router...\n this will also install Redux if you haven't already`
       )
     );
-    if(!OPTIONS.includes(REDUX)) {
+    if (!OPTIONS.includes(REDUX)) {
       await prepareRedux();
     }
-    
+
     setupReactRouter();
   }
 
