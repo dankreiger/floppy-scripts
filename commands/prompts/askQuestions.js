@@ -10,7 +10,8 @@ const questionsConstants = {
   ENZYME: 'ENZYME',
   PROPTYPES_FOLDER: 'PROPTYPES_FOLDER',
   STYLED_COMPONENTS: 'STYLED_COMPONENTS',
-  REDUX: 'REDUX'
+  REDUX: 'REDUX',
+  REACT_ROUTER: 'REACT_ROUTER'
 };
 
 const askQuestions = () => {
@@ -26,7 +27,8 @@ const askQuestions = () => {
         questionsConstants.ENZYME,
         questionsConstants.PROPTYPES_FOLDER,
         questionsConstants.STYLED_COMPONENTS,
-        questionsConstants.REDUX
+        questionsConstants.REDUX,
+        questionsConstants.REACT_ROUTER
       ]
     }
   ];

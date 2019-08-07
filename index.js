@@ -16,7 +16,8 @@ const {
   REDUX,
   CLEAR_CRA_SCAFFOLD,
   PROPTYPES_FOLDER,
-  ENZYME
+  ENZYME,
+  REACT_ROUTER
 } = require('./commands/prompts/askQuestions').questionsConstants;
 const askVersioning = require('./commands/prompts/askVersioning');
 const askCI = require('./commands/prompts/askCI');
@@ -29,6 +30,21 @@ const setupEnzyme = require('./commands/exec/setupEnzyme');
 const setupRedux = require('./commands/exec/setupRedux');
 const clearCRAScaffold = require('./commands/exec/clearCRAScaffold');
 const propTypesFolder = require('./commands/exec/propTypesFolder');
+const setupReactRouter = require('./commands/exec/setupReactRouter');
+
+const prepareRedux = () => {
+  console.log(chalk.cyan.bold(`\n\nSetting up Redux...\n`));
+
+  const reduxAnswers = await reduxQuestions();
+  const { REDUX_OPTIONS } = reduxAnswers;
+  shell.exec('yarn add redux react-redux redux-thunk');
+
+  if (REDUX_OPTIONS === 'Yes') {
+    setupRedux(true);
+  } else {
+    setupRedux();
+  }
+}
 
 const run = async () => {
   // show script introduction
@@ -67,19 +83,22 @@ const run = async () => {
     console.log(chalk.cyan.bold(`\n\nCreating prop types directory...\n`));
     propTypesFolder();
   }
-  // todo
+
   if (OPTIONS.includes(REDUX)) {
-    console.log(chalk.cyan.bold(`\n\nSetting up Redux...\n`));
+    prepareRedux();
+  }
 
-    const reduxAnswers = await reduxQuestions();
-    const { REDUX_OPTIONS } = reduxAnswers;
-    shell.exec('yarn add redux react-redux redux-thunk');
-
-    if (REDUX_OPTIONS === 'Yes') {
-      setupRedux(true);
-    } else {
-      setupRedux();
+  if (OPTIONS.includes(REACT_ROUTER)) {
+    console.log(
+      chalk.cyan.bold(
+        `\n\nSetting up React Router...\n this will also install Redux if you haven't already`
+      )
+    );
+    if(!OPTIONS.includes(REDUX)) {
+      await prepareRedux();
     }
+    
+    setupReactRouter();
   }
 
   console.log(chalk.cyan.bold(`\n\nFormatting code...\n`));
@@ -95,7 +114,7 @@ const run = async () => {
         yarn add --dev prettier
       fi
     exit
-  `)
+  `);
   shell.exec('prettier --single-quote --write src/* src/**/*');
   console.log(chalk.cyan.bold(`\n\nSorting package.json...\n`));
   shell.exec('npx sort-package-json');
