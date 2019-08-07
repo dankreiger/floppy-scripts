@@ -17,93 +17,97 @@ const setupStore = () => {
   shell.mkdir('src/store');
   const storeFileName = 'src/store/store.js';
 
-  console.log(
-    chalk.white('Creating '),
-    chalk.cyan.bold(`${storeFileName}\n`)
-  );
+  console.log(chalk.white('Creating '), chalk.cyan.bold(`${storeFileName}\n`));
   shell.touch(storeFileName);
   shell.ShellString(reduxStoreString).to(storeFileName);
   success(storeFileName);
 };
 
 const setupStoreWithPersistance = () => {
-  shell.mkdir('src/store');
-  const storeFileName = 'src/store/store.js';
-  console.log(
-    chalk.white('Creating '),
-    chalk.cyan.bold(`${storeFileName}\n`)
-  );
-  shell.touch(storeFileName);
-  shell.ShellString(reduxStoreWithPersistanceString).to(storeFileName);
-  success(storeFileName);
+  const storeDir = 'src/store';
+  if (!shell.test('-d', storeDir)) {
+    shell.mkdir(storeDir);
+    const storeFileName = `${storeDir}/store.js`;
+    console.log(
+      chalk.white('Creating '),
+      chalk.cyan.bold(`${storeFileName}\n`)
+    );
+    shell.touch(storeFileName);
+    shell.ShellString(reduxStoreWithPersistanceString).to(storeFileName);
+    success(storeFileName);
 
-  shell.mkdir('src/store');
-  const localStorageFileName = 'src/store/localStorage.js';
-  console.log(
-    chalk.white('Creating '),
-    chalk.cyan.bold(`${localStorageFileName}\n`)
-  );
-  shell.touch(localStorageFileName);
-  shell.ShellString(localStorageString).to(localStorageFileName);
-  success(localStorageFileName);
+    const localStorageFileName = `${storeDir}/localStorage.js`;
+    console.log(
+      chalk.white('Creating '),
+      chalk.cyan.bold(`${localStorageFileName}\n`)
+    );
+    shell.touch(localStorageFileName);
+    shell.ShellString(localStorageString).to(localStorageFileName);
+    success(localStorageFileName);
+  }
 };
 
 const setupReducers = () => {
-  shell.mkdir('src/reducers');
-  const reducersFileName = 'src/reducers/index.js';
-  console.log(
-    chalk.white('Creating '),
-    chalk.cyan.bold(`${reducersFileName}\n`)
-  );
-  shell.touch(reducersFileName);
-  shell.ShellString(rootReducerString).to(reducersFileName);
-  success(reducersFileName);
+  const reducersDir = 'src/reducers';
+  if (!shell.test('-d', reducersDir)) {
+    shell.mkdir(reducersDir);
+    const reducersFileName = `${reducersDir}/index.js`;
+    console.log(
+      chalk.white('Creating '),
+      chalk.cyan.bold(`${reducersFileName}\n`)
+    );
+    shell.touch(reducersFileName);
+    shell.ShellString(rootReducerString).to(reducersFileName);
+    success(reducersFileName);
+  }
 };
 
 const setupActions = () => {
-  shell.mkdir('src/actions');
-  const actionsFileName = 'src/actions/index.js';
-  console.log(
-    chalk.white('Creating '),
-    chalk.cyan.bold(`${actionsFileName}\n`)
-  );
-  shell.ShellString(actionsString).to(actionsFileName);
-  shell.touch(actionsFileName);
+  const actionsDir = 'src/actions';
+  if (!shell.test('-d', actionsDir)) {
+    shell.mkdir(actionsDir);
+    const actionsFileName = `${actionsDir}/index.js`;
+    console.log(
+      chalk.white('Creating '),
+      chalk.cyan.bold(`${actionsFileName}\n`)
+    );
+    shell.ShellString(actionsString).to(actionsFileName);
+    shell.touch(actionsFileName);
 
-  success(actionsFileName);
+    success(actionsFileName);
+  }
 };
 
 const setupConstants = () => {
-  shell.mkdir('src/constants');
-  const constantsFileName = 'src/constants/index.js';
-  console.log(
-    chalk.white('Creating '),
-    chalk.cyan.bold(`${constantsFileName}\n`)
-  );
-  shell.ShellString(constantsString).to(constantsFileName);
-  shell.touch(constantsFileName);
+  const constantsDir = 'src/constants';
+  if (!shell.test('-d', constantsDir)) {
+    shell.mkdir(constantsDir);
+    const constantsFileName = `${constantsDir}/index.js`;
+    console.log(
+      chalk.white('Creating '),
+      chalk.cyan.bold(`${constantsFileName}\n`)
+    );
+    shell.ShellString(constantsString).to(constantsFileName);
+    shell.touch(constantsFileName);
 
-  success(constantsFileName);
+    success(constantsFileName);
+  }
 };
 
 const setupIndexWithRedux = () => {
   const indexFileName = 'src/index.js';
-  console.log(
-    chalk.white('Creating '),
-    chalk.cyan.bold(`${indexFileName}\n`)
-  );
+  console.log(chalk.white('Creating '), chalk.cyan.bold(`${indexFileName}\n`));
   shell.ShellString(indexWithReduxString).to(indexFileName);
   success(indexFileName);
 };
 
 const setupComponents = () => {
   const components = 'src/components';
-  console.log(
-    chalk.white('Creating '),
-    chalk.cyan.bold(`${components}\n`)
-  );
-  shell.mkdir(components);
-  success(components);
+  if (!shell.test('-d', components)) {
+    console.log(chalk.white('Creating '), chalk.cyan.bold(`${components}\n`));
+    shell.mkdir(components);
+    success(components);
+  }
 };
 
 const setupRedux = persistedState => {
