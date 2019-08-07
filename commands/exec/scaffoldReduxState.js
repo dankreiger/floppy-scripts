@@ -23,12 +23,13 @@ const scaffoldReduxState = reducerName => {
   shell.touch(`src/reducers/${reducerName}.reducer.js`);
   shell.touch(`src/actions/${reducerName}.actions.js`);
 
+  const initialState = `${reducerName}InitialState`;
   const reducerString = `
   
-  export const ${reducerName}InitialState = {
+  export const ${initialState} = {
     items: []
   };
-    const ${reducerName}Reducer = (state = ${reducerName}, action) => {
+    const ${reducerName}Reducer = (state = ${initialState}, action) => {
       const { type, payload } = action;
       switch (type) {
         default:
