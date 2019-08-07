@@ -3,6 +3,7 @@
 const shell = require('shelljs');
 const chalk = require('chalk');
 const indexWithReactRouterString = require('../../stringConstants/indexWithReactRouterString');
+const success = require('./../prompts/success');
 
 const setupIndexWithReactRouter = () => {
   shell.exec('yarn add react-router-dom');
