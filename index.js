@@ -85,7 +85,7 @@ const run = async () => {
   }
 
   if (OPTIONS.includes(REDUX)) {
-    prepareRedux();
+    await prepareRedux();
   }
 
   if (OPTIONS.includes(REACT_ROUTER)) {
