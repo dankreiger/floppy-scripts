@@ -1,3 +1,3 @@
-const actionsString = `// actions go here`;
+const actionsString = `/* import actions here */`;
 
 module.exports = actionsString;

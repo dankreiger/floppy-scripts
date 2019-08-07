@@ -39,7 +39,7 @@ const reduxQuestions = () => {
   const questions = [
     {
       type: 'list',
-      name: 'REDUX_OPTIONS',
+      name: 'REDUX_LOCAL_STORAGE_PERSISTENCE',
       message: 'Do you need local storage persistence?',
       choices: ['Yes', 'No']
     }
@@ -47,4 +47,33 @@ const reduxQuestions = () => {
   return inquirer.prompt(questions);
 };
 
-module.exports = { askQuestions, reduxQuestions, questionsConstants };
+const reduxScaffoldQuestions = () => {
+  const questions = [
+    {
+      type: 'list',
+      name: 'SCAFFOLD_STATE',
+      message: 'Do you want to scaffold some redux state?',
+      choices: ['Yes', 'No']
+    }
+  ];
+  return inquirer.prompt(questions);
+};
+
+const askForReduxScaffoldName = () => {
+  const questions = [
+    {
+      type: 'input',
+      name: 'REDUX_STATE_NAME',
+      message: `What's the name of your reducer?`
+    }
+  ];
+  return inquirer.prompt(questions);
+};
+
+module.exports = {
+  askQuestions,
+  reduxQuestions,
+  questionsConstants,
+  reduxScaffoldQuestions,
+  askForReduxScaffoldName
+};

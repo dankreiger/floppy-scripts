@@ -31,7 +31,11 @@ const askCI = () => {
       ];
 
       await inquirer.prompt(deploymentUrl).then(({ url }) => {
-        const u = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
+        let u;
+        if (!url) {
+          u = 'your-app-name.surge.sh';
+        }
+        u = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
         shell.exec(
           `npx json --in-place -f package.json -e 'this.homepage=https://${u}'`
         );

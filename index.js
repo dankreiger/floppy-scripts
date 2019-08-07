@@ -8,7 +8,9 @@ const chalk = require('chalk');
 const init = require('./commands/prompts/init');
 const {
   askQuestions,
-  reduxQuestions
+  reduxQuestions,
+  reduxScaffoldQuestions,
+  askForReduxScaffoldName
 } = require('./commands/prompts/askQuestions');
 const {
   CODE_FORMATTING_HOOKS,
@@ -28,21 +30,36 @@ const setupCodeFormattingHooks = require('./commands/exec/setupCodeFormattingHoo
 const setupAbsoluteImports = require('./commands/exec/setupAbsoluteImports');
 const setupEnzyme = require('./commands/exec/setupEnzyme');
 const setupRedux = require('./commands/exec/setupRedux');
+const scaffoldReduxState = require('./commands/exec/scaffoldReduxState');
 const clearCRAScaffold = require('./commands/exec/clearCRAScaffold');
 const propTypesFolder = require('./commands/exec/propTypesFolder');
 const setupReactRouter = require('./commands/exec/setupReactRouter');
+const makeCodeNice = require('./commands/exec/makeCodeNice');
 
 const prepareRedux = async () => {
   console.log(chalk.cyan.bold(`\n\nSetting up Redux...\n`));
 
   const reduxAnswers = await reduxQuestions();
-  const { REDUX_OPTIONS } = reduxAnswers;
+  const reduxScaffold = await reduxScaffoldQuestions();
+  const { REDUX_LOCAL_STORAGE_PERSISTENCE } = reduxAnswers;
+  const { SCAFFOLD_STATE } = reduxScaffold;
   shell.exec('yarn add redux react-redux redux-thunk');
 
-  if (REDUX_OPTIONS === 'Yes') {
+  if (REDUX_LOCAL_STORAGE_PERSISTENCE === 'Yes') {
     setupRedux(true);
   } else {
     setupRedux();
+  }
+
+  if (SCAFFOLD_STATE === 'Yes') {
+    const name = await askForReduxScaffoldName();
+    console.log('name', name);
+    if (name && name.REDUX_STATE_NAME) {
+      scaffoldReduxState(name.REDUX_STATE_NAME.trim());
+    } else {
+      scaffoldReduxState('general');
+    }
+    makeCodeNice();
   }
 };
 
@@ -102,20 +119,7 @@ const run = async () => {
   }
 
   console.log(chalk.cyan.bold(`\n\nFormatting code...\n`));
-  shell.exec(`   
-    declare file="package.json"
-    declare regex="\s+prettier\s+"
-
-    declare file_content=$( cat "$file" )
-    if [[ " $file_content " =~ $regex ]] # please note the space before and after the file content
-        then
-            echo ""
-        else
-        yarn add --dev prettier
-      fi
-    exit
-  `);
-  shell.exec('prettier --single-quote --write src/* src/**/*');
+  makeCodeNice();
   console.log(chalk.cyan.bold(`\n\nSorting package.json...\n`));
   shell.exec('npx sort-package-json');
 

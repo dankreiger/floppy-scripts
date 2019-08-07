@@ -22,7 +22,8 @@
   "main": "index.js",
   "bin": {
     "floppy": "./index.js",
-    "floppy-scripts": "./index.js"
+    "floppy-scripts": "./index.js",
+    "floppy-redux-scaffold": "./reduxScaffold.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
