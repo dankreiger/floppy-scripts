@@ -37,7 +37,7 @@ const askCI = () => {
         }
         u = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
         shell.exec(
-          `npx json --in-place -f package.json -e 'this.homepage=https://${u}'`
+          `npx json --in-place -f package.json -e 'this.homepage="https://${u}"'`
         );
         shell.touch(CIfilename);
         shell.ShellString(travisStringWithDeployment(u)).to(CIfilename);
