@@ -39,6 +39,7 @@ const askCI = () => {
         shell.exec(
           `npx json --in-place -f package.json -e 'this.homepage="https://${u}"'`
         );
+        shell.exec('yarn add surge');
         shell.touch(CIfilename);
         shell.ShellString(travisStringWithDeployment(u)).to(CIfilename);
         success(CIfilename);
