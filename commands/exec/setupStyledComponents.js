@@ -13,8 +13,8 @@ const setupStyledComponents = () => {
   shell.exec('yarn add styled-components');
   shell.mkdir('src/App');
 
-  const filename = 'src/App/App.styles.js';
-  shell.touch(filename);
+  const fileName = 'src/App/App.styles.js';
+  shell.touch(fileName);
   shell.ShellString(appStyles).to(fileName);
   success(fileName);
 };
