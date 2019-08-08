@@ -19,7 +19,8 @@ const {
   CLEAR_CRA_SCAFFOLD,
   PROPTYPES_FOLDER,
   ENZYME,
-  REACT_ROUTER
+  REACT_ROUTER,
+  STYLED_COMPONENTS
 } = require('./commands/prompts/askQuestions').questionsConstants;
 const askVersioning = require('./commands/prompts/askVersioning');
 const askCI = require('./commands/prompts/askCI');
