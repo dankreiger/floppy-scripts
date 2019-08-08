@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 const shell = require('shelljs');
+const chalk = require('chalk');
 
 const scaffoldReduxState = reducerName => {
+  console.log(
+    chalk.white('Scaffolding does not work as an independent command yet...\n')
+  );
   const importLine = shell.exec(
     `
     sed -e "/import /s/$/ import ${reducerName}Reducer from 'reducers\\\/${reducerName}\\\.reducer\\\.js' /" src/reducers/index.js`
@@ -9,7 +13,7 @@ const scaffoldReduxState = reducerName => {
   shell.ShellString(importLine).to('src/reducers/index.js');
 
   const puppy = shell.exec(
-    `sed -e "/export default combineReducers({/s/$/ ${reducerName}Reducer/" src/reducers/index.js`
+    `sed -e "/export default combineReducers({/s/$/ ${reducerName}Reducer, /" src/reducers/index.js`
   );
 
   shell.ShellString(puppy).to('src/reducers/index.js');
