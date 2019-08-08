@@ -31,18 +31,19 @@ const askCI = () => {
       ];
 
       await inquirer.prompt(deploymentUrl).then(({ url }) => {
-        let u;
-        if (!url && !url.length) {
-          u = 'your-app-name.surge.sh';
-        }
-        u = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
-        shell.exec(
-          `npx json --in-place -f package.json -e 'this.homepage="https://${u}"'`
-        );
-        shell.exec('yarn add surge');
-        shell.touch(CIfilename);
-        shell.ShellString(travisStringWithDeployment(u)).to(CIfilename);
-        success(CIfilename);
+        console.log('Skip this until it is reliable');
+        // let u;
+        // if (!url && !url.length) {
+        //   u = 'your-app-name.surge.sh';
+        // }
+        // u = url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
+        // shell.exec(
+        //   `npx json --in-place -f package.json -e 'this.homepage="https://${u}"'`
+        // );
+        // shell.exec('yarn add surge');
+        // shell.touch(CIfilename);
+        // shell.ShellString(travisStringWithDeployment(u)).to(CIfilename);
+        // success(CIfilename);
       });
     } else {
       shell.touch(CIfilename);
