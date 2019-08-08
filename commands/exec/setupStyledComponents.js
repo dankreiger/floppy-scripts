@@ -15,7 +15,7 @@ const setupStyledComponents = () => {
 
   const filename = 'src/App/App.styles.js';
   shell.touch(filename);
-  shell.ShellString(appStyles).to(filename);
+  shell.ShellString(appStyles).to(fileName);
   success(fileName);
 };
 
