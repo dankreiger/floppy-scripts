@@ -13,7 +13,7 @@ const scaffoldReduxState = reducerName => {
   shell.ShellString(importLine).to('src/reducers/index.js');
 
   const puppy = shell.exec(
-    `sed -e "/export default combineReducers({/s/$/ ${reducerName}Reducer, /" src/reducers/index.js`
+    `sed -e "/export default combineReducers({/s/$/ ${reducerName}Reducer/" src/reducers/index.js`
   );
 
   shell.ShellString(puppy).to('src/reducers/index.js');
