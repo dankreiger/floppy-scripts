@@ -20,7 +20,7 @@ const askAppName = async () => {
       response = userInput;
       const fmtResponse = response && response.trim();
       chalk.blue('Note: you need npx and yarn to do this whole thing')
-      shell.exec(`npx create-react-app ${fmtResponse}`)
+      shell.exec(`npx create-react-app ${fmtResponse || 'app'}`);
       chalk.blue('Changing directory into: ' + shell.pwd())
       shell.cd(fmtResponse);
       rl.close();

@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 
 const questionsConstants = {
   ABSOLUTE_IMPORTS: 'ABSOLUTE_IMPORTS',
-  CLEAR_CRA_SCAFFOLD: 'CLEAR_CRA_SCAFFOLD',
+  // CLEAR_CRA_SCAFFOLD: 'CLEAR_CRA_SCAFFOLD',
   CODE_FORMATTING_HOOKS: 'CODE_FORMATTING_HOOKS',
   COMMITLINT: 'COMMITLINT',
   ENZYME: 'ENZYME',
@@ -19,10 +19,10 @@ const askQuestions = () => {
     {
       type: 'checkbox',
       name: 'OPTIONS',
-      message: 'What do you need?',
+      message: 'What do you  (recommended: select all - press a, then enter)?',
       choices: [
         questionsConstants.ABSOLUTE_IMPORTS,
-        questionsConstants.CLEAR_CRA_SCAFFOLD,
+        // questionsConstants.CLEAR_CRA_SCAFFOLD,
         questionsConstants.CODE_FORMATTING_HOOKS,
         questionsConstants.ENZYME,
         questionsConstants.PROPTYPES_FOLDER,

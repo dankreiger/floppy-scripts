@@ -16,7 +16,7 @@ const {
   CODE_FORMATTING_HOOKS,
   ABSOLUTE_IMPORTS,
   REDUX,
-  CLEAR_CRA_SCAFFOLD,
+//   CLEAR_CRA_SCAFFOLD,
   PROPTYPES_FOLDER,
   ENZYME,
   REACT_ROUTER,
@@ -71,6 +71,10 @@ const floppyBase = async() => {
   await askVersioning();
   // CI setup
   await askCI();
+
+  console.log(chalk.cyan.bold(`\n\nCleaning CRA...\n`));
+  clearCRAScaffold();
+
   // ask questions
   const answers = await askQuestions();
   // ask about electron
@@ -89,10 +93,10 @@ const floppyBase = async() => {
     setupAbsoluteImports();
   }
 
-  if (OPTIONS.includes(CLEAR_CRA_SCAFFOLD)) {
-    console.log(chalk.cyan.bold(`\n\nCleaning CRA...\n`));
-    clearCRAScaffold();
-  }
+//   if (OPTIONS.includes(CLEAR_CRA_SCAFFOLD)) {
+//     console.log(chalk.cyan.bold(`\n\nCleaning CRA...\n`));
+//     clearCRAScaffold();
+//   }
 
   if (OPTIONS.includes(ENZYME)) {
     console.log(chalk.cyan.bold(`\n\nSetting up Enzyme...\n`));
