@@ -19,10 +19,11 @@
   },
   "license": "MIT",
   "author": "Dan Kreiger <dan@dankreiger.com> (http://www.dankreiger.com/)",
-  "main": "index.js",
+  "main": "./scripts/completeRun.js",
   "bin": {
-    "floppy": "./index.js",
-    "floppy-scripts": "./index.js",
+    "floppy": "./scripts/addOn.js",
+    "floppy-scripts": "./scripts/addOn.js",
+    "create-floppy-app": "./scripts/completeRun.js",
     "floppy-redux-scaffold": "./reduxScaffold.js"
   },
   "scripts": {
@@ -32,6 +33,7 @@
     "chalk": "2.4.2",
     "figlet": "1.2.3",
     "inquirer": "6.5.0",
+    "readline": "^1.3.0",
     "shelljs": "0.8.3"
   },
   "engines": {
