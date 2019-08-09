@@ -27,7 +27,7 @@
 ### Install globally
 
 ```sh
-  $ ni -g floppy-scripts
+  $ npm install -g floppy-scripts
 ```
 
 ### Create a react app with extra options by running the CLI and following the prompt
