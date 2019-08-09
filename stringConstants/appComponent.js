@@ -1,9 +1,11 @@
 const appComponent = `import React from 'react';
+import { AppContainer } from './App.styles';
 function App() {
+
   return (
-    <div className="App">
+    <AppContainer>
       floppy soft ears
-    </div>
+    </AppContainer>
   );
 }
 export default App;`;
