@@ -1,18 +1,18 @@
-## A quick and sloppy cli for saving time :dog:
+# A quick and sloppy cli for saving time :dog:
 
-![npm](https://img.shields.io/npm/v/floppy-scripts) 
+![npm](https://img.shields.io/npm/v/floppy-scripts)
 ![David](https://img.shields.io/david/dankreiger/floppy-scripts)
 
 - unfortunately it is not yet floppy, but rather sloppy
 
-### Prerequisites
+## Prerequisites
 
 - node
 - npx
 - yarn
 - nvm
 
-### Usage
+## Usage
 
 - add to a create-react-app project when using `yarn` to cut down on common repetitive tasks
 
@@ -21,6 +21,24 @@
 - it's a mess, it's just for me - so you can check it out if you're curious about sloppy code written in 30 minutes
 
 ---
+
+## Global CLI
+
+### Install globally
+
+```sh
+  $ ni -g floppy-scripts
+```
+
+### Create a react app with extra options by running the CLI and following the prompt
+
+```
+  $ create-floppy-app
+```
+
+---
+
+## Installation in a project
 
 ### Install with yarn:
 
