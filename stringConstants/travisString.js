@@ -4,9 +4,11 @@ node_js:
 cache:
   directories:
     - node_modules
+install:
+  - yarn install --ignore-engines
 script:
-  - npm test
-  - npm run build
+  - yarn test
+  - yarn build
 on:
   branch: master`;
 
@@ -16,9 +18,11 @@ node_js:
 cache:
   directories:
     - node_modules
+install:
+  - yarn install --ignore-engines
 script:
-  - npm test
-  - npm run build
+  - yarn test
+  - yarn build
 deploy:
   provider: surge
   skip_cleanup: true

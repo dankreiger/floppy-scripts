@@ -16,7 +16,7 @@ const makeCodeNice = () => {
     fi
   exit
 `);
-  shell.exec('prettier --single-quote --write src/* src/**/*');
+  shell.exec('npx prettier --single-quote --write src/* src/**/*');
 };
 
 module.exports = makeCodeNice;
