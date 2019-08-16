@@ -56,7 +56,6 @@
 
 ### TODO:
 
-- add script for react router
 - add script for reselect
 - add changelog generator script
 - make it compatible with npm too
